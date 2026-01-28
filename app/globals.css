@@ -1,0 +1,277 @@
+/* 
+ * Google Fonts import - uncomment for production deployment
+ * @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap");
+ */
+
+@import "tailwindcss";
+@config "../tailwind.config.ts";
+
+:root {
+  /* Font Families - using system fallbacks for compatibility */
+  --font-cormorant: "Cormorant Garamond", Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-outfit: "Outfit", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  
+  /* Primary - Warm Charcoal */
+  --color-primary-950: #1a1a1a;
+  --color-primary-900: #262626;
+  --color-primary-800: #333333;
+  --color-primary-700: #404040;
+  --color-primary-600: #525252;
+
+  /* Accent - Warm Gold */
+  --color-accent-500: #b8965c;
+  --color-accent-400: #c9a86e;
+  --color-accent-300: #d4b98a;
+  --color-accent-200: #e5d4b8;
+  --color-accent-100: #f5efe6;
+
+  /* Neutral - Warm Whites */
+  --color-neutral-50: #fdfcfa;
+  --color-neutral-100: #f9f7f4;
+  --color-neutral-200: #f0ece5;
+  --color-neutral-300: #e0d9ce;
+  --color-neutral-400: #c4baa8;
+  --color-neutral-500: #9a8f7e;
+
+  /* Backgrounds */
+  --bg-primary: var(--color-neutral-50);
+  --bg-secondary: var(--color-neutral-100);
+  --bg-dark: var(--color-primary-950);
+  --bg-dark-secondary: var(--color-primary-900);
+}
+
+/* Base styles */
+* {
+  border-color: var(--color-neutral-300);
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--color-neutral-50);
+  color: var(--color-primary-900);
+  font-family: var(--font-outfit), system-ui, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-cormorant), Georgia, serif;
+  font-weight: 500;
+}
+
+::selection {
+  background-color: var(--color-accent-200);
+  color: var(--color-primary-950);
+}
+
+/* Component styles */
+.section-padding {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .section-padding {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-padding {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.container-width {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.prose-luxury {
+  color: var(--color-primary-700);
+  line-height: 1.75;
+}
+
+.prose-luxury p {
+  margin-bottom: 1rem;
+}
+
+.prose-luxury strong {
+  color: var(--color-primary-900);
+  font-weight: 500;
+}
+
+.gold-line {
+  width: 4rem;
+  height: 1px;
+  background-color: var(--color-accent-500);
+}
+
+.gold-line-vertical {
+  width: 1px;
+  height: 4rem;
+  background-color: var(--color-accent-500);
+}
+
+/* Button base styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  font-family: var(--font-outfit), system-ui, sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.875rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-primary {
+  background-color: var(--color-primary-950);
+  color: var(--color-neutral-100);
+  border: 1px solid transparent;
+}
+
+.btn-primary:hover {
+  border-color: var(--color-accent-500);
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-accent-500);
+  border: 1px solid var(--color-accent-500);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-accent-500);
+  color: var(--color-neutral-50);
+}
+
+.btn-white {
+  background-color: var(--color-neutral-50);
+  color: var(--color-primary-950);
+  border: 1px solid var(--color-neutral-50);
+}
+
+.btn-white:hover {
+  background-color: transparent;
+  color: var(--color-neutral-50);
+}
+
+/* Card styles */
+.card-luxury {
+  background-color: white;
+  padding: 2rem;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-luxury:hover {
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+}
+
+.card-luxury-gold {
+  background-color: white;
+  padding: 2rem;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  border-top: 2px solid var(--color-accent-500);
+}
+
+.card-luxury-gold:hover {
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+}
+
+/* Form styles */
+.input-luxury {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: var(--color-neutral-50);
+  border: 1px solid var(--color-neutral-300);
+  color: var(--color-primary-900);
+  font-family: var(--font-outfit), system-ui, sans-serif;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-luxury::placeholder {
+  color: var(--color-neutral-400);
+}
+
+.input-luxury:focus {
+  outline: none;
+  border-color: var(--color-accent-500);
+  box-shadow: 0 0 0 1px var(--color-accent-500);
+}
+
+.label-luxury {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-primary-700);
+  margin-bottom: 0.5rem;
+}
+
+/* Image placeholder */
+.image-placeholder {
+  background: linear-gradient(to bottom right, var(--color-neutral-200), var(--color-neutral-100), var(--color-neutral-200));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-neutral-400);
+}
+
+/* Utility classes */
+.text-balance {
+  text-wrap: balance;
+}
+
+.animation-delay-100 {
+  animation-delay: 100ms;
+}
+
+.animation-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animation-delay-300 {
+  animation-delay: 300ms;
+}
+
+.animation-delay-400 {
+  animation-delay: 400ms;
+}
+
+.animation-delay-500 {
+  animation-delay: 500ms;
+}
+
+/* Subtle parallax helper */
+.parallax-slow {
+  will-change: transform;
+}
+
+/* Hide scrollbar but allow scrolling */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
