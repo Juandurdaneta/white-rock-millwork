@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Home, Building2, Check } from "lucide-react";
 import SectionWrapper from "@/components/layout/section-wrapper";
@@ -24,10 +25,18 @@ export default function ContactPage() {
   return (
     <main>
       {/* Hero Section */}
-      <section className="relative py-24 lg:py-32 bg-primary-950 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/images/noise.png')] opacity-5" />
-        <div className="absolute top-20 left-10 w-64 h-64 border border-accent-500/20 rotate-12" />
-        <div className="absolute bottom-10 right-20 w-48 h-48 border border-accent-500/10 -rotate-6" />
+      <section className="relative py-24 lg:py-32 overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/Images/Stock/IMG_8640.jpg"
+            alt="Custom bathroom vanity cabinets"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-primary-950/80 via-primary-950/70 to-primary-950/80" />
+        </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
