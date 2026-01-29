@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import Button from "@/components/ui/button";
@@ -147,7 +148,7 @@ export default function PainPoints() {
             </Link>
           </motion.div>
 
-          {/* Decorative Image Placeholder */}
+          {/* Kitchen Image */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={
@@ -156,20 +157,16 @@ export default function PainPoints() {
             transition={{ duration: 0.8, delay: 0.3, ease: [0.4, 0, 0.2, 1] }}
             className="relative hidden lg:block"
           >
-            <div className="aspect-[4/5] bg-gradient-to-br from-neutral-200 via-neutral-100 to-neutral-200 overflow-hidden">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-accent-100 flex items-center justify-center">
-                    <div className="w-10 h-10 rounded-full bg-accent-200" />
-                  </div>
-                  <span className="text-neutral-400 font-body text-sm uppercase tracking-wider">
-                    Kitchen Image
-                  </span>
-                </div>
-              </div>
+            <div className="aspect-[4/5] overflow-hidden rounded-lg">
+              <Image
+                src="/Images/Stock/landing.webp"
+                alt="Beautiful custom kitchen cabinets"
+                fill
+                className="object-cover"
+              />
             </div>
             {/* Decorative Frame */}
-            <div className="absolute -top-4 -right-4 w-full h-full border-2 border-accent-500 -z-10" />
+            <div className="absolute -top-4 -right-4 w-full h-full border-2 border-accent-500 -z-10 rounded-lg" />
           </motion.div>
         </div>
       </div>
