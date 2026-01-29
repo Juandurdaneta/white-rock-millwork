@@ -2,11 +2,12 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { 
-  Sparkles, 
-  Clock, 
-  Shield, 
-  Users, 
+import Image from "next/image";
+import {
+  Sparkles,
+  Clock,
+  Shield,
+  Users,
   Award,
   MapPin,
   Ruler,
@@ -106,11 +107,19 @@ export default function AboutPage() {
   return (
     <main>
       {/* Hero Section */}
-      <section className="relative py-24 lg:py-32 bg-primary-950 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/images/noise.png')] opacity-5" />
-        <div className="absolute top-20 right-10 w-64 h-64 border border-accent-500/20 rotate-12" />
-        <div className="absolute bottom-10 left-20 w-48 h-48 border border-accent-500/10 -rotate-6" />
-        
+      <section className="relative py-24 lg:py-32 overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/Images/Stock/DSC_9351.jpg.webp"
+            alt="Craftsman working on custom cabinets"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary-950/90 via-primary-950/70 to-primary-950/50" />
+        </div>
+
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
