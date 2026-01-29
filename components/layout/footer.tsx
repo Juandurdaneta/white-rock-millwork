@@ -38,7 +38,19 @@ export default function Footer() {
               Custom cabinets designed for your style and your daily life.
               Delivered on time, built to last.
             </p>
-            <div className="w-16 h-px bg-accent-500" />
+            <div className="w-16 h-px bg-accent-500 mb-6" />
+            {/* BBB Badge */}
+            <a
+              href="https://www.bbb.org/us/tx/blanco/profile/custom-cabinets/whiterock-millwork-0825-1000250207/#sealclick"
+              target="_blank"
+              rel="nofollow noopener noreferrer"
+            >
+              <img
+                src="https://seal-austin.bbb.org/seals/blue-seal-187-130-bbb-1000250207.png"
+                alt="Whiterock Millwork BBB Business Review"
+                className="w-auto h-16"
+              />
+            </a>
           </div>
 
           {/* Quick Links */}
