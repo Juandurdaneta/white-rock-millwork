@@ -10,25 +10,22 @@ export const testimonials: Testimonial[] = [
   {
     id: "1",
     quote:
-      "We were overwhelmed until we found White Rock. They understood our vision immediately and delivered exactly what we dreamed of. The attention to detail is unmatched.",
-    name: "Sarah M.",
-    location: "Austin, TX",
-    image: "/images/testimonials/sarah.jpg",
+      "When you buy custom cabinetry, you want to both see and feel the difference at the end. With Whiterock Millwork, we certainly did as the end result cabinets are just an extra level of quality in both looks and how they feel.",
+    name: "Michael Bode",
+    location: "Texas",
   },
   {
     id: "2",
     quote:
-      "The quality difference is unbelievable. Three years in and our cabinets still look brand new. Everyone who visits our home asks who made them.",
-    name: "Michael & Jennifer T.",
-    location: "San Antonio, TX",
-    image: "/images/testimonials/michael-jennifer.jpg",
+      "Michael and his team at Whiterock Millwork are top drawer! They take their time understanding the client's vision. They are craftsmen who can take that vision and deliver an amazing product!",
+    name: "Robert Alexander",
+    location: "Texas",
   },
   {
     id: "3",
     quote:
-      "From design to installation, everything was seamless. They actually listened to how we use our kitchen and designed around our daily life. It's perfect.",
-    name: "The Rodriguez Family",
-    location: "Dallas, TX",
-    image: "/images/testimonials/rodriguez.jpg",
+      "I am so impressed with this company! They did all the cabinetry in our new home and we couldn't be happier. Outstanding quality product and superior customer service!",
+    name: "Bette Paese",
+    location: "Texas",
   },
 ];

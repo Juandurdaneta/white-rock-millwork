@@ -25,7 +25,7 @@ export default function SolutionIntro() {
           </h2>
 
           <p className="font-body text-body-lg text-primary-700 max-w-2xl mx-auto">
-            At White Rock Millwork, we translate your vision into custom
+            At Whiterock Millwork, we translate your vision into custom
             cabinets built for YOUR style and YOUR life.
           </p>
 

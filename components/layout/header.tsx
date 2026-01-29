@@ -61,7 +61,7 @@ export default function Header() {
             <Link href="/" className="group">
               <Image
                 src="/Images/logo.png"
-                alt="White Rock Millwork"
+                alt="Whiterock Millwork"
                 width={180}
                 height={48}
                 className={cn(

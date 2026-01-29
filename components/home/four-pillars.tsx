@@ -16,7 +16,7 @@ const pillars = [
   },
   {
     icon: Shield,
-    title: "Quality You Can Understand",
+    title: "Quality You Understand",
     description:
       "We'll show you exactly what makes cabinets last 50 years vs. 5 years. No jargon. No guessing. Just confidence in your investment.",
   },

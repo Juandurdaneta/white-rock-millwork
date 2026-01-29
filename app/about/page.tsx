@@ -179,7 +179,7 @@ export default function AboutPage() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="font-display text-display-md text-primary-950 mb-6">
-              The White Rock Millwork{" "}
+              The Whiterock Millwork{" "}
               <span className="italic text-accent-500">Difference</span>
             </h2>
             
@@ -289,7 +289,7 @@ export default function AboutPage() {
       <SectionWrapper>
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="font-display text-display-md text-primary-950 mb-6">
-            Why Choose White Rock Millwork?
+            Why Choose Whiterock Millwork?
           </h2>
           <p className="font-body text-body-lg text-primary-700">
             When you work with us, you&apos;re not just getting cabinets—you&apos;re getting 

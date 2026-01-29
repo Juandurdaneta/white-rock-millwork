@@ -1,10 +1,10 @@
-# White Rock Millwork — Premium Custom Cabinet Website
+# Whiterock Millwork — Premium Custom Cabinet Website
 
-A high-converting lead generation website for White Rock Millwork, a premium custom cabinet company in Texas. Built with Next.js 14+, Tailwind CSS, and Framer Motion.
+A high-converting lead generation website for Whiterock Millwork, a premium custom cabinet company in Texas. Built with Next.js 14+, Tailwind CSS, and Framer Motion.
 
 ## 🎯 Project Overview
 
-- **Business**: White Rock Millwork — Custom cabinet design, manufacturing, and installation
+- **Business**: Whiterock Millwork — Custom cabinet design, manufacturing, and installation
 - **Location**: 1717 US-281, Blanco, TX 78606
 - **Target Audience**: Affluent Texas homeowners (primary) and industry professionals (secondary)
 - **Primary Goal**: Generate qualified leads through a "Cabinet Style Quiz" funnel
@@ -183,4 +183,4 @@ See `DEPLOYMENT.md` for detailed production deployment instructions.
 
 ## 📝 License
 
-Proprietary - White Rock Millwork
+Proprietary - Whiterock Millwork

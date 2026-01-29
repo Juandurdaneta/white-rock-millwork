@@ -9,8 +9,8 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "White Rock Millwork | Custom Cabinets in Texas",
-    template: "%s | White Rock Millwork",
+    default: "Whiterock Millwork | Custom Cabinets in Texas",
+    template: "%s | Whiterock Millwork",
   },
   description:
     "Custom cabinets designed for your style AND your daily life. Delivered on time, built to last. Serving affluent Texas homeowners with premium cabinetry.",
@@ -26,14 +26,14 @@ export const metadata: Metadata = {
     "luxury cabinets",
     "premium cabinetry",
   ],
-  authors: [{ name: "White Rock Millwork" }],
-  creator: "White Rock Millwork",
+  authors: [{ name: "Whiterock Millwork" }],
+  creator: "Whiterock Millwork",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://wrmtx.com",
-    siteName: "White Rock Millwork",
-    title: "White Rock Millwork | Custom Cabinets in Texas",
+    siteName: "Whiterock Millwork",
+    title: "Whiterock Millwork | Custom Cabinets in Texas",
     description:
       "Custom cabinets designed for your style AND your daily life. Delivered on time, built to last.",
     images: [
@@ -41,13 +41,13 @@ export const metadata: Metadata = {
         url: "/images/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "White Rock Millwork - Premium Custom Cabinets",
+        alt: "Whiterock Millwork - Premium Custom Cabinets",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "White Rock Millwork | Custom Cabinets in Texas",
+    title: "Whiterock Millwork | Custom Cabinets in Texas",
     description:
       "Custom cabinets designed for your style AND your daily life. Delivered on time, built to last.",
     images: ["/images/og-image.jpg"],

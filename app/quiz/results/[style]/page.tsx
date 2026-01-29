@@ -27,12 +27,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   if (!profile) {
     return {
-      title: "Style Not Found | White Rock Millwork",
+      title: "Style Not Found | Whiterock Millwork",
     };
   }
 
   return {
-    title: `${profile.name} | Your Cabinet Style | White Rock Millwork`,
+    title: `${profile.name} | Your Cabinet Style | Whiterock Millwork`,
     description: profile.tagline,
     openGraph: {
       title: `${profile.name} | Your Cabinet Style`,

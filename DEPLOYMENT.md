@@ -1,4 +1,4 @@
-# Deployment Guide — White Rock Millwork
+# Deployment Guide — Whiterock Millwork
 
 ## Production Deployment Checklist
 
