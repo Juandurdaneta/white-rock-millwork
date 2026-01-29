@@ -46,7 +46,7 @@ export default function FinalCTA() {
           >
             <h2 className="font-display text-display-lg text-primary-950 mb-6">
               Your Vision, Built Flawlessly, Delivered On Time,{" "}
-              <span className="italic text-accent-500">
+              <span className="italic text-accent-500 whitespace-nowrap">
                 Loved For Generations
               </span>
             </h2>
@@ -164,7 +164,7 @@ export default function FinalCTA() {
             </div>
 
             {/* Qualifier Text */}
-            <div className="bg-primary-900/30 border border-primary-800 p-6 mb-10 text-left">
+            <div className="bg-primary-900/30 border border-primary-800 p-6 mb-10 text-center">
               <p className="font-body text-small text-neutral-400">
                 We're not for everyone. We only work with homeowners who value
                 quality and want cabinets they'll actually love. We limit
