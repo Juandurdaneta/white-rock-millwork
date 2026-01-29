@@ -99,19 +99,19 @@ export default function Footer() {
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-accent-500 flex-shrink-0" />
                 <a
-                  href="tel:+15551234567"
+                  href="tel:+18309535339"
                   className="text-neutral-400 hover:text-accent-400 transition-colors duration-300"
                 >
-                  (555) 123-4567
+                  (830) 953-5339
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-accent-500 flex-shrink-0" />
                 <a
-                  href="mailto:info@wrmtx.com"
+                  href="mailto:admin@whiterockmillwork.com"
                   className="text-neutral-400 hover:text-accent-400 transition-colors duration-300"
                 >
-                  info@wrmtx.com
+                  admin@whiterockmillwork.com
                 </a>
               </li>
             </ul>

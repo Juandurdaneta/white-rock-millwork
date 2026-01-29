@@ -147,7 +147,7 @@ export default function ContactForm({ type = "homeowner" }: ContactFormProps) {
         <Input
           label="Phone"
           type="tel"
-          placeholder="(512) 555-1234"
+          placeholder="(830) 555-1234"
           error={errors.phone?.message}
           {...register("phone")}
         />

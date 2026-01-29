@@ -107,7 +107,7 @@ export default function QuizLeadForm({
           type="tel"
           {...register("phone")}
           error={errors.phone?.message}
-          placeholder="(512) 555-1234"
+          placeholder="(830) 555-1234"
           required
         />
 

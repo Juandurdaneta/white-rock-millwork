@@ -258,19 +258,19 @@ export default function AboutPage() {
       </SectionWrapper>
 
       {/* Process Overview */}
-      <SectionWrapper variant="dark">
+      <SectionWrapper>
         <div className="text-center max-w-3xl mx-auto mb-16">
           <Badge variant="gold" className="mb-6">How We Work</Badge>
-          <h2 className="font-display text-display-md text-white mb-6">
+          <h2 className="font-display text-display-md text-primary-950 mb-6">
             Our Process
           </h2>
-          <p className="font-body text-body-lg text-neutral-300">
-            A straightforward approach that eliminates confusion and delivers 
+          <p className="font-body text-body-lg text-primary-700">
+            A straightforward approach that eliminates confusion and delivers
             results you&apos;ll love for decades.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {processSteps.map((step, index) => (
             <motion.div
               key={index}
@@ -278,17 +278,26 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="text-center"
+              className="relative bg-white border border-neutral-200 p-8 hover:border-accent-500/50 hover:shadow-lg transition-all group"
             >
-              <span className="font-display text-6xl text-accent-500/30 block mb-4">
+              {/* Step number badge */}
+              <div className="absolute -top-4 left-8 bg-accent-500 text-white font-display text-lg px-4 py-1">
                 {step.number}
-              </span>
-              <h3 className="font-display text-heading-lg text-white mb-3">
-                {step.title}
-              </h3>
-              <p className="font-body text-body text-neutral-400">
-                {step.description}
-              </p>
+              </div>
+
+              <div className="pt-4">
+                <h3 className="font-display text-heading-lg text-primary-900 mb-3">
+                  {step.title}
+                </h3>
+                <p className="font-body text-body text-primary-600">
+                  {step.description}
+                </p>
+              </div>
+
+              {/* Connector line between cards (hidden on last item and mobile) */}
+              {index < processSteps.length - 1 && (
+                <div className="hidden lg:block absolute top-1/2 -right-3 w-6 h-px bg-accent-500/40" />
+              )}
             </motion.div>
           ))}
         </div>

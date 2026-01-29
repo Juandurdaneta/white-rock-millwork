@@ -33,10 +33,10 @@ export default function ContactInfo() {
             Call Us
           </h3>
           <a
-            href="tel:+15125551234"
+            href="tel:+18309535339"
             className="font-body text-body text-primary-600 hover:text-accent-500 transition-colors"
           >
-            (512) 555-1234
+            (830) 953-5339
           </a>
         </div>
       </div>
@@ -53,10 +53,10 @@ export default function ContactInfo() {
             Email Us
           </h3>
           <a
-            href="mailto:info@whiterockmillwork.com"
+            href="mailto:admin@whiterockmillwork.com"
             className="font-body text-body text-primary-600 hover:text-accent-500 transition-colors"
           >
-            info@whiterockmillwork.com
+            admin@whiterockmillwork.com
           </a>
         </div>
       </div>
@@ -73,22 +73,25 @@ export default function ContactInfo() {
             Hours
           </h3>
           <p className="font-body text-body text-primary-600">
-            Monday - Friday: 8am - 5pm<br />
-            Saturday: By Appointment<br />
-            Sunday: Closed
+            Monday - Friday: 8:00 AM - 4:00 PM
           </p>
         </div>
       </div>
 
-      {/* Map Placeholder */}
+      {/* Google Map */}
       <div className="mt-8">
-        <div className="aspect-[4/3] bg-gradient-to-br from-neutral-200 to-neutral-300 flex items-center justify-center">
-          <div className="text-center p-4">
-            <MapPin className="w-8 h-8 mx-auto text-neutral-400 mb-2" />
-            <span className="font-body text-small text-neutral-500">
-              Google Map Embed
-            </span>
-          </div>
+        <div className="aspect-[4/3] w-full">
+          <iframe
+            src="https://www.google.com/maps?q=1717+US-281,+Blanco,+TX+78606&output=embed"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Whiterock Millwork Location"
+            className="w-full h-full"
+          />
         </div>
       </div>
     </div>
