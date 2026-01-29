@@ -24,17 +24,17 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     ref
   ) => {
     const baseStyles =
-      "inline-flex items-center justify-center font-body font-medium uppercase tracking-widest transition-all duration-300 ease-luxury disabled:opacity-50 disabled:cursor-not-allowed";
+      "inline-flex items-center justify-center font-body font-medium uppercase tracking-widest transition-all duration-300 ease-luxury disabled:opacity-50 disabled:cursor-not-allowed rounded-full border";
 
     const variants = {
       primary:
-        "bg-primary-950 text-neutral-100 border border-transparent hover:border-accent-500 hover:shadow-lg hover:-translate-y-0.5",
+        "bg-primary-950 text-neutral-100 border-primary-800 hover:border-accent-500 hover:shadow-lg hover:-translate-y-0.5",
       secondary:
-        "bg-transparent text-accent-500 border border-accent-500 hover:bg-accent-500 hover:text-neutral-50",
+        "bg-transparent text-accent-500 border-accent-500 hover:bg-accent-500 hover:text-neutral-50",
       white:
-        "bg-neutral-50 text-primary-950 border border-neutral-50 hover:bg-transparent hover:text-neutral-50 hover:border-neutral-50",
+        "bg-neutral-50 text-primary-950 border-neutral-300 hover:bg-transparent hover:text-neutral-50 hover:border-neutral-50",
       ghost:
-        "bg-transparent text-primary-900 hover:text-accent-500 border-none",
+        "bg-transparent text-primary-900 hover:text-accent-500 border-primary-300 hover:border-accent-500",
     };
 
     const sizes = {

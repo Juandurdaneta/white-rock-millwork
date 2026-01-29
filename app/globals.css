@@ -136,12 +136,13 @@ h6 {
   letter-spacing: 0.1em;
   font-size: 0.875rem;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 9999px;
 }
 
 .btn-primary {
   background-color: var(--color-primary-950);
   color: var(--color-neutral-100);
-  border: 1px solid transparent;
+  border: 1px solid var(--color-primary-800);
 }
 
 .btn-primary:hover {
@@ -164,7 +165,7 @@ h6 {
 .btn-white {
   background-color: var(--color-neutral-50);
   color: var(--color-primary-950);
-  border: 1px solid var(--color-neutral-50);
+  border: 1px solid var(--color-neutral-300);
 }
 
 .btn-white:hover {

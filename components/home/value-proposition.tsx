@@ -1,10 +1,11 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import Button from "@/components/ui/button";
-import { ArrowRight, Gem } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export default function ValueProposition() {
   const ref = useRef(null);
@@ -14,7 +15,7 @@ export default function ValueProposition() {
     <section className="py-section bg-neutral-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Image Placeholder */}
+          {/* Image */}
           <motion.div
             ref={ref}
             initial={{ opacity: 0, x: -40 }}
@@ -22,20 +23,16 @@ export default function ValueProposition() {
             transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
             className="relative order-2 lg:order-1"
           >
-            <div className="aspect-[4/3] bg-gradient-to-br from-primary-800 via-primary-900 to-primary-950 overflow-hidden">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-accent-500/20 flex items-center justify-center">
-                    <Gem className="w-10 h-10 text-accent-400" />
-                  </div>
-                  <span className="text-neutral-500 font-body text-sm uppercase tracking-wider">
-                    Quality Comparison Image
-                  </span>
-                </div>
-              </div>
+            <div className="aspect-[4/3] overflow-hidden rounded-lg">
+              <Image
+                src="/Images/Stock/cabinets01.jpg.webp"
+                alt="Premium custom kitchen cabinets with quality finish"
+                fill
+                className="object-cover"
+              />
             </div>
             {/* Decorative Element */}
-            <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-accent-100 -z-10" />
+            <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-accent-100 -z-10 rounded-lg" />
           </motion.div>
 
           {/* Content */}

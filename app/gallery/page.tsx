@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import SectionWrapper from "@/components/layout/section-wrapper";
@@ -8,45 +9,45 @@ import GalleryFilter, { GalleryCategory } from "@/components/gallery/gallery-fil
 import GalleryGrid, { GalleryItem } from "@/components/gallery/gallery-grid";
 import Badge from "@/components/ui/badge";
 
-// Placeholder gallery data
+// Gallery data with real cabinet images
 const galleryItems: GalleryItem[] = [
   // Standard Overlay
   {
     id: "so-1",
-    src: "/images/gallery/standard-overlay-1.jpg",
-    alt: "Modern white kitchen with standard overlay cabinets",
+    src: "/Images/Stock/cabinets01.jpg.webp",
+    alt: "Modern two-tone kitchen with black and white cabinets",
     category: "standard-overlay",
-    title: "Contemporary White Kitchen",
+    title: "Contemporary Two-Tone Kitchen",
     location: "Austin, TX",
   },
   {
     id: "so-2",
-    src: "/images/gallery/standard-overlay-2.jpg",
-    alt: "Classic shaker style standard overlay cabinets",
+    src: "/Images/Stock/IMG_5229.png.webp",
+    alt: "Classic gray shaker style cabinets",
     category: "standard-overlay",
-    title: "Classic Shaker Design",
+    title: "Classic Gray Shaker",
     location: "San Antonio, TX",
   },
   {
     id: "so-3",
-    src: "/images/gallery/standard-overlay-3.jpg",
-    alt: "Gray kitchen cabinets with modern hardware",
+    src: "/Images/Stock/landing.webp",
+    alt: "Sage green kitchen cabinets with modern fixtures",
     category: "standard-overlay",
-    title: "Warm Gray Kitchen",
+    title: "Sage Green Kitchen",
     location: "Dallas, TX",
   },
   {
     id: "so-4",
-    src: "/images/gallery/standard-overlay-4.jpg",
-    alt: "Two-tone kitchen with island",
+    src: "/Images/Stock/IMG_2992.jpg.webp",
+    alt: "Custom kitchen cabinets",
     category: "standard-overlay",
-    title: "Two-Tone Elegance",
+    title: "Custom Kitchen Design",
     location: "Houston, TX",
   },
   // Frameless European
   {
     id: "fe-1",
-    src: "/images/gallery/frameless-1.jpg",
+    src: "/Images/Stock/IMG_4995_bfde4201-1f93-4ef4-aba9-84ca53914f5d.heic.webp",
     alt: "Sleek frameless European style kitchen",
     category: "frameless-european",
     title: "Minimalist Kitchen Design",
@@ -54,15 +55,15 @@ const galleryItems: GalleryItem[] = [
   },
   {
     id: "fe-2",
-    src: "/images/gallery/frameless-2.jpg",
-    alt: "High-gloss frameless cabinets",
+    src: "/Images/Stock/IMG_5005.heic.webp",
+    alt: "Modern frameless cabinets",
     category: "frameless-european",
-    title: "High-Gloss Modern",
+    title: "Modern Frameless Design",
     location: "Fort Worth, TX",
   },
   {
     id: "fe-3",
-    src: "/images/gallery/frameless-3.jpg",
+    src: "/Images/Stock/IMG_8307_bb3381e2-d3a6-47e4-9231-638bae918e0a.heic.webp",
     alt: "Integrated handle frameless design",
     category: "frameless-european",
     title: "Handleless Design",
@@ -70,40 +71,40 @@ const galleryItems: GalleryItem[] = [
   },
   {
     id: "fe-4",
-    src: "/images/gallery/frameless-4.jpg",
-    alt: "Dark wood frameless cabinets",
+    src: "/Images/Stock/IMG_9540_c2d045fb-1c41-4dfa-9356-2874e8cf24dc.heic.webp",
+    alt: "Contemporary frameless cabinets",
     category: "frameless-european",
-    title: "Contemporary Dark Oak",
+    title: "Contemporary Style",
     location: "San Antonio, TX",
   },
   // Inset
   {
     id: "in-1",
-    src: "/images/gallery/inset-1.jpg",
-    alt: "Traditional inset cabinet kitchen",
+    src: "/Images/Stock/IMG_8640.jpg",
+    alt: "Traditional bathroom vanity cabinets with gold hardware",
     category: "inset",
-    title: "Traditional Elegance",
+    title: "Elegant Bathroom Vanity",
     location: "Dallas, TX",
   },
   {
     id: "in-2",
-    src: "/images/gallery/inset-2.jpg",
-    alt: "White inset cabinets with beaded detail",
+    src: "/Images/Stock/IMG_8661_5.jpg.webp",
+    alt: "Custom inset cabinets",
     category: "inset",
-    title: "Beaded Inset Classic",
+    title: "Custom Inset Design",
     location: "Austin, TX",
   },
   {
     id: "in-3",
-    src: "/images/gallery/inset-3.jpg",
-    alt: "Navy blue inset kitchen cabinets",
+    src: "/Images/Stock/IMG_9547.heic.webp",
+    alt: "Premium inset kitchen cabinets",
     category: "inset",
-    title: "Navy Blue Sophistication",
+    title: "Premium Kitchen Design",
     location: "Houston, TX",
   },
   {
     id: "in-4",
-    src: "/images/gallery/inset-4.jpg",
+    src: "/Images/Stock/IMG_2999.png.webp",
     alt: "Custom inset pantry cabinets",
     category: "inset",
     title: "Custom Pantry Design",
@@ -228,13 +229,13 @@ export default function GalleryPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="/quiz"
-              className="inline-flex items-center justify-center px-8 py-4 font-body text-small font-medium uppercase tracking-wider bg-primary-950 text-neutral-50 hover:bg-primary-800 transition-colors"
+              className="inline-flex items-center justify-center px-8 py-4 font-body text-small font-medium uppercase tracking-wider bg-primary-950 text-neutral-50 hover:bg-primary-800 transition-colors rounded-full border border-primary-800"
             >
               Discover Your Style
             </a>
             <a
               href="/contact"
-              className="inline-flex items-center justify-center px-8 py-4 font-body text-small font-medium uppercase tracking-wider border-2 border-accent-500 text-accent-500 hover:bg-accent-500 hover:text-white transition-colors"
+              className="inline-flex items-center justify-center px-8 py-4 font-body text-small font-medium uppercase tracking-wider border-2 border-accent-500 text-accent-500 hover:bg-accent-500 hover:text-white transition-colors rounded-full"
             >
               Schedule Consultation
             </a>
@@ -292,26 +293,14 @@ export default function GalleryPage() {
               className="relative max-w-5xl w-full"
               onClick={(e) => e.stopPropagation()}
             >
-              {/* Placeholder Image */}
-              <div className="aspect-[16/10] bg-gradient-to-br from-neutral-300 to-neutral-400 flex items-center justify-center">
-                <div className="text-center p-8">
-                  <svg
-                    className="w-24 h-24 mx-auto text-neutral-500 mb-4"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1}
-                      d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-                    />
-                  </svg>
-                  <span className="font-display text-heading-lg text-neutral-600">
-                    {lightboxItem.title}
-                  </span>
-                </div>
+              {/* Image */}
+              <div className="relative aspect-[16/10] rounded-lg overflow-hidden">
+                <Image
+                  src={lightboxItem.src}
+                  alt={lightboxItem.alt}
+                  fill
+                  className="object-cover"
+                />
               </div>
 
               {/* Caption */}

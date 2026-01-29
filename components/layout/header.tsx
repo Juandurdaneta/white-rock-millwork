@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
@@ -58,16 +59,19 @@ export default function Header() {
           <nav className="flex items-center justify-between">
             {/* Logo */}
             <Link href="/" className="group">
-              <span
+              <Image
+                src="/Images/logo.png"
+                alt="White Rock Millwork"
+                width={180}
+                height={48}
                 className={cn(
-                  "font-display text-xl sm:text-2xl font-semibold tracking-wide transition-colors duration-300",
+                  "h-10 sm:h-12 w-auto transition-all duration-300",
                   isScrolled
-                    ? "text-primary-950"
-                    : "text-neutral-50 group-hover:text-accent-300"
+                    ? ""
+                    : "brightness-0 invert group-hover:brightness-100 group-hover:invert-0"
                 )}
-              >
-                WHITE ROCK MILLWORK
-              </span>
+                priority
+              />
             </Link>
 
             {/* Desktop Navigation */}

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import Button from "@/components/ui/button";
 import Badge from "@/components/ui/badge";
@@ -9,23 +10,17 @@ import { ArrowRight, Award } from "lucide-react";
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image Placeholder */}
+      {/* Background Image */}
       <div className="absolute inset-0 bg-primary-900">
-        <div
-          className="absolute inset-0 image-placeholder"
-          style={{
-            backgroundImage:
-              "linear-gradient(135deg, #262626 0%, #1a1a1a 50%, #333333 100%)",
-          }}
-        >
-          {/* Decorative elements to simulate luxury kitchen */}
-          <div className="absolute inset-0 opacity-20">
-            <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-accent-500/20 blur-3xl" />
-            <div className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-neutral-400/10 blur-3xl" />
-          </div>
-        </div>
+        <Image
+          src="/Images/Stock/landing.webp"
+          alt="Luxury custom kitchen cabinets"
+          fill
+          className="object-cover"
+          priority
+        />
         {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-primary-950/50 via-primary-950/40 to-primary-950/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-primary-950/60 via-primary-950/50 to-primary-950/80" />
       </div>
 
       {/* Content */}
