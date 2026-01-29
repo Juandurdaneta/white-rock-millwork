@@ -63,7 +63,7 @@ export default function ValueProposition() {
               </strong>
             </p>
 
-            <div className="bg-neutral-100 p-6 border-l-2 border-accent-500 mb-8">
+            <div className="bg-neutral-100 p-6 border-l-2 border-accent-500 mb-8 rounded-lg">
               <p className="font-body text-body text-primary-700 mb-2">
                 <strong className="text-primary-900">Premium finishes</strong>{" "}
                 last decades.

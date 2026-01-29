@@ -98,7 +98,7 @@ export default function ProcessTimeline() {
                 }`}
               >
                 {/* Number Badge */}
-                <div className="absolute left-8 lg:left-1/2 -translate-x-1/2 w-16 h-16 bg-neutral-50 border-2 border-accent-500 flex items-center justify-center z-10">
+                <div className="absolute left-8 lg:left-1/2 -translate-x-1/2 w-16 h-16 bg-neutral-50 border-2 border-accent-500 flex items-center justify-center z-10 rounded-full">
                   <span className="font-display text-xl text-accent-500 font-semibold">
                     {step.number}
                   </span>
@@ -110,7 +110,7 @@ export default function ProcessTimeline() {
                     isEven ? "lg:pr-0" : "lg:pl-0"
                   }`}
                 >
-                  <div className="bg-white p-6 lg:p-8 shadow-sm hover:shadow-md transition-shadow duration-300">
+                  <div className="bg-white p-6 lg:p-8 shadow-sm hover:shadow-md transition-shadow duration-300 rounded-xl">
                     <div className="flex items-center gap-3 mb-3">
                       <Clock className="w-4 h-4 text-accent-500" />
                       <Badge variant="gold">{step.timeframe}</Badge>

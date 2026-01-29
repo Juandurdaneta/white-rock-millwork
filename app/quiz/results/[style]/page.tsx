@@ -182,7 +182,7 @@ export default async function QuizResultsPage({ params }: Props) {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-neutral-100 p-6">
+            <div className="bg-neutral-100 p-6 rounded-xl">
               <h3 className="font-display text-heading-lg text-primary-900 mb-4">
                 Primary Colors
               </h3>
@@ -198,7 +198,7 @@ export default async function QuizResultsPage({ params }: Props) {
               </ul>
             </div>
 
-            <div className="bg-neutral-100 p-6">
+            <div className="bg-neutral-100 p-6 rounded-xl">
               <h3 className="font-display text-heading-lg text-primary-900 mb-4">
                 Accent Elements
               </h3>
@@ -235,7 +235,7 @@ export default async function QuizResultsPage({ params }: Props) {
             {profile.mistakes.map((mistake, index) => (
               <div
                 key={index}
-                className="flex items-start gap-4 bg-primary-900/50 p-6 border-l-4 border-accent-500"
+                className="flex items-start gap-4 bg-primary-900/50 p-6 border-l-4 border-accent-500 rounded-lg"
               >
                 <span className="font-display text-2xl text-accent-500 flex-shrink-0">
                   {index + 1}
@@ -380,7 +380,7 @@ function FeatureCard({
   };
 
   return (
-    <div className="bg-white p-8 shadow-sm hover:shadow-md transition-shadow border-l-4 border-accent-500">
+    <div className="bg-white p-8 shadow-sm hover:shadow-md transition-shadow border-l-4 border-accent-500 rounded-xl">
       <div className="text-accent-500 mb-4">{iconMap[icon]}</div>
       <h3 className="font-display text-heading-lg text-primary-900 mb-3">
         {title}

@@ -243,7 +243,7 @@ export default function AboutPage() {
             <motion.div
               key={index}
               variants={fadeUpVariants}
-              className="bg-white p-8 shadow-sm hover:shadow-md transition-shadow"
+              className="bg-white p-8 shadow-sm hover:shadow-md transition-shadow rounded-xl"
             >
               <value.icon className="w-10 h-10 text-accent-500 mb-6" />
               <h3 className="font-display text-heading-lg text-primary-900 mb-4">
@@ -278,10 +278,10 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="relative bg-white border border-neutral-200 p-8 hover:border-accent-500/50 hover:shadow-lg transition-all group"
+              className="relative bg-white border border-neutral-200 p-8 hover:border-accent-500/50 hover:shadow-lg transition-all group rounded-xl"
             >
               {/* Step number badge */}
-              <div className="absolute -top-4 left-8 bg-accent-500 text-white font-display text-lg px-4 py-1">
+              <div className="absolute -top-4 left-8 bg-accent-500 text-white font-display text-lg px-4 py-1 rounded-full">
                 {step.number}
               </div>
 
@@ -326,7 +326,7 @@ export default function AboutPage() {
             <motion.div
               key={index}
               variants={fadeUpVariants}
-              className="flex gap-6 p-6 border border-neutral-200 hover:border-accent-500/50 transition-colors"
+              className="flex gap-6 p-6 border border-neutral-200 hover:border-accent-500/50 transition-colors rounded-xl"
             >
               <div className="flex-shrink-0">
                 <div className="w-14 h-14 bg-accent-100 flex items-center justify-center">

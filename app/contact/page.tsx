@@ -119,7 +119,7 @@ export default function ContactPage() {
                 </>
               )}
 
-              <div className="bg-white p-8 shadow-sm border border-neutral-100">
+              <div className="bg-white p-8 shadow-sm border border-neutral-100 rounded-xl">
                 <ContactForm type={activeTrack} />
               </div>
             </motion.div>

@@ -93,7 +93,7 @@ export default function FourPillars() {
                 className="h-full bg-primary-900/50 backdrop-blur-sm border border-primary-800 hover:border-accent-500/50 transition-all duration-500"
               >
                 <div className="flex flex-col h-full">
-                  <div className="w-14 h-14 flex items-center justify-center bg-accent-500/10 border border-accent-500/30 mb-6">
+                  <div className="w-14 h-14 flex items-center justify-center bg-accent-500/10 border border-accent-500/30 mb-6 rounded-xl">
                     <pillar.icon className="w-7 h-7 text-accent-400" />
                   </div>
                   <h3 className="font-display text-heading-lg text-neutral-50 mb-4">

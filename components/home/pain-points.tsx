@@ -119,7 +119,7 @@ export default function PainPoints() {
               ))}
             </motion.ul>
 
-            <div className="bg-neutral-50 p-6 border-l-2 border-accent-500 mb-8">
+            <div className="bg-neutral-50 p-6 border-l-2 border-accent-500 mb-8 rounded-lg">
               <p className="font-body text-body text-primary-700 mb-4">
                 Every cabinet looks fine under showroom lighting. Everyone
                 promises quality. Every contractor says they can "do custom." But

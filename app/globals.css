@@ -179,6 +179,7 @@ h6 {
   padding: 2rem;
   box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 0.75rem;
 }
 
 .card-luxury:hover {
@@ -191,6 +192,7 @@ h6 {
   box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   border-top: 2px solid var(--color-accent-500);
+  border-radius: 0.75rem;
 }
 
 .card-luxury-gold:hover {
@@ -206,6 +208,7 @@ h6 {
   color: var(--color-primary-900);
   font-family: var(--font-outfit), system-ui, sans-serif;
   transition: border-color 0.3s, box-shadow 0.3s;
+  border-radius: 0.5rem;
 }
 
 .input-luxury::placeholder {

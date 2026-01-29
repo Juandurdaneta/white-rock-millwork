@@ -27,9 +27,9 @@ export default function GalleryFilter({
           key={category.id}
           onClick={() => onCategoryChange(category.id)}
           className={cn(
-            "px-6 py-3 font-body text-small uppercase tracking-wider transition-all duration-300",
+            "px-6 py-3 font-body text-small uppercase tracking-wider transition-all duration-300 rounded-full",
             activeCategory === category.id
-              ? "bg-primary-950 text-white"
+              ? "bg-primary-950 text-white border border-primary-950"
               : "bg-transparent text-primary-700 border border-primary-300 hover:border-accent-500 hover:text-accent-500"
           )}
         >

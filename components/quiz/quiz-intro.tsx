@@ -35,7 +35,7 @@ export default function QuizIntro({ onStart }: QuizIntroProps) {
       <div className="w-px h-12 bg-accent-500 mx-auto mb-10" />
 
       {/* Preview of what they'll get */}
-      <div className="bg-neutral-100 p-6 max-w-md mx-auto mb-10">
+      <div className="bg-neutral-100 p-6 max-w-md mx-auto mb-10 rounded-xl">
         <h3 className="font-body font-medium text-primary-900 mb-4">
           You'll discover:
         </h3>

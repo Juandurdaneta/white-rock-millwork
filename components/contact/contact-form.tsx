@@ -193,7 +193,7 @@ export default function ContactForm({ type = "homeowner" }: ContactFormProps) {
         <textarea
           placeholder="Tell us about your project vision..."
           rows={4}
-          className="w-full px-4 py-3 border border-neutral-300 bg-white font-body text-body text-primary-900 placeholder:text-neutral-400 focus:outline-none focus:border-accent-500 focus:ring-1 focus:ring-accent-500 transition-colors resize-none"
+          className="w-full px-4 py-3 border border-neutral-300 bg-white font-body text-body text-primary-900 placeholder:text-neutral-400 focus:outline-none focus:border-accent-500 focus:ring-1 focus:ring-accent-500 transition-colors resize-none rounded-lg"
           {...register("message")}
         />
       </div>
@@ -203,7 +203,7 @@ export default function ContactForm({ type = "homeowner" }: ContactFormProps) {
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="flex items-center gap-3 p-4 bg-red-50 border border-red-200"
+          className="flex items-center gap-3 p-4 bg-red-50 border border-red-200 rounded-lg"
         >
           <AlertCircle className="w-5 h-5 text-red-600 flex-shrink-0" />
           <p className="font-body text-small text-red-700">{errorMessage}</p>
