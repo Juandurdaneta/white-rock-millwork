@@ -153,7 +153,7 @@ export default function FinalCTA() {
                     delay: 0.3 + index * 0.1,
                     ease: [0.4, 0, 0.2, 1],
                   }}
-                  className="flex items-center gap-3 bg-primary-900/50 border border-primary-800 p-4"
+                  className="flex items-center gap-3 bg-primary-900/50 border border-primary-800 p-4 rounded-xl"
                 >
                   <item.icon className="w-5 h-5 text-accent-400 flex-shrink-0" />
                   <span className="font-body text-small text-neutral-300 text-left">
@@ -164,7 +164,7 @@ export default function FinalCTA() {
             </div>
 
             {/* Qualifier Text */}
-            <div className="bg-primary-900/30 border border-primary-800 p-6 mb-10 text-center">
+            <div className="bg-primary-900/30 border border-primary-800 p-6 mb-10 text-center rounded-xl">
               <p className="font-body text-small text-neutral-400">
                 We're not for everyone. We only work with homeowners who value
                 quality and want cabinets they'll actually love. We limit
