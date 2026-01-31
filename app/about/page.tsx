@@ -120,12 +120,12 @@ export default function AboutPage() {
           <div className="absolute inset-0 bg-gradient-to-r from-primary-950/90 via-primary-950/70 to-primary-950/50" />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial="hidden"
             animate="visible"
             variants={staggerContainer}
-            className="max-w-3xl"
+            className="max-w-3xl mx-auto"
           >
             <motion.div variants={fadeUpVariants}>
               <Badge variant="gold" className="mb-6">Our Story</Badge>
