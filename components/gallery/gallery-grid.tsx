@@ -87,9 +87,6 @@ export default function GalleryGrid({
 
             {/* Caption Below Image */}
             <div className="mt-3">
-              <h3 className="font-display text-heading-md text-primary-900 group-hover:text-accent-500 transition-colors">
-                {item.title}
-              </h3>
               <p className="font-body text-small text-neutral-500 capitalize">
                 {item.category.replace(/-/g, " ")}
               </p>
