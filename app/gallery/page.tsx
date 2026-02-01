@@ -104,7 +104,7 @@ const galleryItems: GalleryItem[] = [
   },
   {
     id: "in-4",
-    src: "/Images/Stock/IMG_2999.png.webp",
+    src: "/Images/Stock/IMG_5229.heic.webp",
     alt: "Custom inset pantry cabinets",
     category: "inset",
     title: "Custom Pantry Design",

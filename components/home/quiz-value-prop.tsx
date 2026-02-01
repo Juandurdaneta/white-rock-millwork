@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import Button from "@/components/ui/button";
@@ -115,7 +116,7 @@ export default function QuizValueProp() {
             </Link>
           </motion.div>
 
-          {/* Image Placeholder */}
+          {/* Image */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={
@@ -124,17 +125,14 @@ export default function QuizValueProp() {
             transition={{ duration: 0.8, delay: 0.3, ease: [0.4, 0, 0.2, 1] }}
             className="relative"
           >
-            <div className="aspect-[4/5] bg-gradient-to-br from-neutral-200 via-neutral-100 to-neutral-200">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-accent-100 flex items-center justify-center">
-                    <Sparkles className="w-10 h-10 text-accent-400" />
-                  </div>
-                  <span className="text-neutral-400 font-body text-sm uppercase tracking-wider">
-                    Happy Homeowner Image
-                  </span>
-                </div>
-              </div>
+            <div className="aspect-[4/5] relative overflow-hidden">
+              <Image
+                src="/Images/Stock/Utility Room.png"
+                alt="Beautiful utility room with custom cabinets"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
             </div>
             {/* Decorative Frame */}
             <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-accent-500 -z-10" />
