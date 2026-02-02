@@ -127,7 +127,7 @@ export default function QuizValueProp() {
           >
             <div className="aspect-[4/5] relative overflow-hidden">
               <Image
-                src="/Images/Stock/Utility Room.png"
+                src="/Images/Stock/IMG_5005.heic.webp"
                 alt="Beautiful utility room with custom cabinets"
                 fill
                 className="object-cover"
