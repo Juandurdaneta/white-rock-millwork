@@ -159,7 +159,7 @@ export default function PainPoints() {
           >
             <div className="aspect-[4/5] overflow-hidden rounded-lg">
               <Image
-                src="/Images/Stock/70322340023__d5e77fbb-3c76-45bf-a5e5-dcd1a71725bc.png.webp"
+                src="/Images/Stock/IMG_2992.jpg.webp"
                 alt="Beautiful custom kitchen cabinets"
                 fill
                 className="object-cover"
