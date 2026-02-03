@@ -21,6 +21,9 @@ export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
+  // Pages with light backgrounds that need dark header from the start
+  const isLightPage = pathname?.startsWith("/quiz");
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -50,7 +53,7 @@ export default function Header() {
       <header
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
-          isScrolled
+          isScrolled || isLightPage
             ? "bg-neutral-50/95 backdrop-blur-md shadow-sm py-4"
             : "bg-transparent py-6"
         )}
@@ -66,7 +69,7 @@ export default function Header() {
                 height={48}
                 className={cn(
                   "h-10 sm:h-12 w-auto transition-all duration-300",
-                  isScrolled
+                  isScrolled || isLightPage
                     ? ""
                     : "brightness-0 invert group-hover:brightness-100 group-hover:invert-0"
                 )}
@@ -82,7 +85,7 @@ export default function Header() {
                   href={link.href}
                   className={cn(
                     "relative font-body text-sm uppercase tracking-widest transition-colors duration-300",
-                    isScrolled
+                    isScrolled || isLightPage
                       ? "text-primary-700 hover:text-primary-950"
                       : "text-neutral-200 hover:text-neutral-50",
                     pathname === link.href && "text-accent-500"
@@ -103,7 +106,7 @@ export default function Header() {
             <div className="hidden lg:block">
               <Link href="/contact">
                 <Button
-                  variant={isScrolled ? "primary" : "white"}
+                  variant={isScrolled || isLightPage ? "primary" : "white"}
                   size="sm"
                 >
                   Free Consultation
@@ -116,7 +119,7 @@ export default function Header() {
               onClick={() => setIsMobileMenuOpen(true)}
               className={cn(
                 "lg:hidden p-2 transition-colors duration-300",
-                isScrolled ? "text-primary-950" : "text-neutral-50"
+                isScrolled || isLightPage ? "text-primary-950" : "text-neutral-50"
               )}
               aria-label="Open menu"
             >
