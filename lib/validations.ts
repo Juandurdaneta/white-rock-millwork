@@ -21,5 +21,12 @@ export const contactFormSchema = leadFormSchema.extend({
   howHeard: z.string().optional(),
 });
 
+export const quizEmailFormSchema = z.object({
+  firstName: z.string().min(1, "First name is required"),
+  email: z.string().email("Please enter a valid email"),
+  cabinetChecklistOptIn: z.boolean(),
+});
+
 export type LeadFormData = z.infer<typeof leadFormSchema>;
 export type ContactFormData = z.infer<typeof contactFormSchema>;
+export type QuizEmailFormData = z.infer<typeof quizEmailFormSchema>;

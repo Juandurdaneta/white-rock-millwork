@@ -2,15 +2,24 @@ import { LeadFormData, ContactFormData } from "./validations";
 
 const GHL_WEBHOOK_URL = process.env.NEXT_PUBLIC_GHL_WEBHOOK_URL;
 
-export interface QuizSubmissionData extends LeadFormData {
+export interface QuizSubmissionData {
+  firstName: string;
+  email: string;
+  cabinetChecklistOptIn: boolean;
   quizAnswers: {
-    q1_movie: string;
-    q2_vacation: string;
-    q3_hosting: string;
-    q4_decisions: string;
-    q5_details: string;
+    q1: string;
+    q2: string;
+    q3: string;
+    q4: string;
+    q5: string;
+    q6: string;
+    q7: string;
+    q8: string;
+    q9: string;
+    q10: string;
   };
   resultStyle: string;
+  movieResult: string;
 }
 
 export interface ContactSubmissionData extends ContactFormData {
@@ -26,14 +35,12 @@ export async function submitQuizToGHL(data: QuizSubmissionData) {
 
   const payload = {
     firstName: data.firstName,
-    lastName: data.lastName,
     email: data.email,
-    phone: data.phone,
-    zipCode: data.zipCode,
-    projectTimeline: data.timeline,
+    cabinetChecklistOptIn: data.cabinetChecklistOptIn,
     quizAnswers: data.quizAnswers,
     resultStyle: data.resultStyle,
-    source: "cabinet-style-quiz",
+    movieResult: data.movieResult,
+    source: "cabinet-style-quiz-movie",
     submittedAt: new Date().toISOString(),
   };
 

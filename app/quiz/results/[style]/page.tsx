@@ -9,7 +9,6 @@ import Badge from "@/components/ui/badge";
 import {
   ArrowRight,
   Check,
-  AlertTriangle,
   Palette,
   Sparkles,
   Phone,
@@ -77,11 +76,17 @@ export default async function QuizResultsPage({ params }: Props) {
               Your Cabinet Style Revealed
             </Badge>
 
-            <h1 className="font-display text-display-xl text-white mb-6">
-              {profile.name}
+            <h1 className="font-display text-display-xl text-white mb-4">
+              You&apos;re a{" "}
+              <span className="text-accent-400 italic">&quot;{profile.movieTitle}&quot;</span>{" "}
+              Type
             </h1>
 
-            <p className="font-display text-display-md text-accent-400 italic mb-8">
+            <p className="font-display text-heading-xl text-white mb-6">
+              {profile.name}
+            </p>
+
+            <p className="font-body text-body-xl text-neutral-300 italic mb-8">
               {profile.tagline}
             </p>
 
@@ -137,19 +142,24 @@ export default async function QuizResultsPage({ params }: Props) {
               icon="door"
             />
             <FeatureCard
-              title="Hardware"
-              description={profile.features.hardware}
-              icon="hardware"
-            />
-            <FeatureCard
               title="Finish"
               description={profile.features.finish}
               icon="finish"
             />
             <FeatureCard
-              title="Layout Recommendations"
-              description={profile.features.layout}
-              icon="layout"
+              title="Hardware"
+              description={profile.features.hardware}
+              icon="hardware"
+            />
+            <FeatureCard
+              title="Details"
+              description={profile.features.details}
+              icon="details"
+            />
+            <FeatureCard
+              title="Special Features"
+              description={profile.features.specialFeatures}
+              icon="special"
             />
           </div>
         </div>
@@ -166,20 +176,8 @@ export default async function QuizResultsPage({ params }: Props) {
           </div>
           <p className="font-body text-body-lg text-primary-600 text-center mb-12 max-w-2xl mx-auto">
             These carefully curated palettes will create the perfect atmosphere
-            for your {profile.name.toLowerCase()} kitchen.
+            for your {profile.name} kitchen.
           </p>
-
-          {/* Color Swatches */}
-          <div className="flex justify-center gap-4 mb-12">
-            {profile.colorSwatches.map((color, index) => (
-              <div
-                key={index}
-                className="w-20 h-20 sm:w-24 sm:h-24 shadow-lg transition-transform hover:scale-105"
-                style={{ backgroundColor: color }}
-                title={profile.colors.primary[index] || "Accent"}
-              />
-            ))}
-          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-neutral-100 p-6 rounded-xl">
@@ -200,51 +198,19 @@ export default async function QuizResultsPage({ params }: Props) {
 
             <div className="bg-neutral-100 p-6 rounded-xl">
               <h3 className="font-display text-heading-lg text-primary-900 mb-4">
-                Accent Elements
+                Complementary Colors
               </h3>
               <ul className="space-y-2">
-                {profile.colors.accent.map((accent, index) => (
+                {profile.colors.complementary.map((color, index) => (
                   <li key={index} className="flex items-center gap-3">
                     <Check className="w-4 h-4 text-accent-500 flex-shrink-0" />
                     <span className="font-body text-body text-primary-700">
-                      {accent}
+                      {color}
                     </span>
                   </li>
                 ))}
               </ul>
             </div>
-          </div>
-        </div>
-      </SectionWrapper>
-
-      {/* Mistakes to Avoid Section */}
-      <SectionWrapper variant="dark">
-        <div className="max-w-4xl mx-auto">
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <AlertTriangle className="w-6 h-6 text-accent-400" />
-            <h2 className="font-display text-display-md text-white">
-              Common Mistakes to Avoid
-            </h2>
-          </div>
-          <p className="font-body text-body-lg text-neutral-300 text-center mb-12 max-w-2xl mx-auto">
-            Homeowners with your style often make these mistakes. Here&apos;s how to
-            get it right.
-          </p>
-
-          <div className="space-y-6">
-            {profile.mistakes.map((mistake, index) => (
-              <div
-                key={index}
-                className="flex items-start gap-4 bg-primary-900/50 p-6 border-l-4 border-accent-500 rounded-lg"
-              >
-                <span className="font-display text-2xl text-accent-500 flex-shrink-0">
-                  {index + 1}
-                </span>
-                <p className="font-body text-body-lg text-neutral-200">
-                  {mistake}
-                </p>
-              </div>
-            ))}
           </div>
         </div>
       </SectionWrapper>
@@ -362,7 +328,7 @@ function FeatureCard({
         />
       </svg>
     ),
-    layout: (
+    details: (
       <svg
         className="w-8 h-8"
         fill="none"
@@ -373,7 +339,22 @@ function FeatureCard({
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth={1.5}
-          d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"
+          d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+        />
+      </svg>
+    ),
+    special: (
+      <svg
+        className="w-8 h-8"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={1.5}
+          d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
         />
       </svg>
     ),

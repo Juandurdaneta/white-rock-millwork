@@ -8,9 +8,9 @@ import QuizQuestion from "./quiz-question";
 import QuizProgress from "./quiz-progress";
 import QuizLeadForm from "./quiz-lead-form";
 import { quizQuestions } from "@/data/quiz-questions";
-import { calculateQuizResult, QuizAnswers } from "@/lib/quiz-logic";
+import { calculateQuizResult, QuizAnswers, getStyleDisplayName } from "@/lib/quiz-logic";
 import { submitQuizToGHL, QuizSubmissionData } from "@/lib/ghl";
-import { LeadFormData } from "@/lib/validations";
+import { QuizEmailFormData } from "@/lib/validations";
 
 type QuizStep = "intro" | "questions" | "lead-form";
 
@@ -24,6 +24,11 @@ export default function QuizContainer() {
     q3: "",
     q4: "",
     q5: "",
+    q6: "",
+    q7: "",
+    q8: "",
+    q9: "",
+    q10: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -61,22 +66,31 @@ export default function QuizContainer() {
   }, [currentQuestion]);
 
   const handleSubmit = useCallback(
-    async (formData: LeadFormData) => {
+    async (formData: QuizEmailFormData) => {
       setIsSubmitting(true);
 
       try {
         const resultStyle = calculateQuizResult(answers);
+        const movieResult = getStyleDisplayName(resultStyle);
 
         const submissionData: QuizSubmissionData = {
-          ...formData,
+          firstName: formData.firstName,
+          email: formData.email,
+          cabinetChecklistOptIn: formData.cabinetChecklistOptIn,
           quizAnswers: {
-            q1_movie: answers.q1,
-            q2_vacation: answers.q2,
-            q3_hosting: answers.q3,
-            q4_decisions: answers.q4,
-            q5_details: answers.q5,
+            q1: answers.q1,
+            q2: answers.q2,
+            q3: answers.q3,
+            q4: answers.q4,
+            q5: answers.q5,
+            q6: answers.q6,
+            q7: answers.q7,
+            q8: answers.q8,
+            q9: answers.q9,
+            q10: answers.q10,
           },
           resultStyle,
+          movieResult,
         };
 
         await submitQuizToGHL(submissionData);

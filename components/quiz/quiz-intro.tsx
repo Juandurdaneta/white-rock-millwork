@@ -17,18 +17,18 @@ export default function QuizIntro({ onStart }: QuizIntroProps) {
       </Badge>
 
       <h1 className="font-display text-display-lg text-primary-950 mb-6">
-        Discover Your{" "}
-        <span className="italic text-accent-500">Perfect Cabinet Style</span>
+        Which Iconic Movie Lives Inside{" "}
+        <span className="italic text-accent-500">Your Pinterest Board?</span>
       </h1>
 
       <p className="font-body text-body-lg text-primary-700 mb-4 max-w-xl mx-auto">
-        Answer 5 quick questions to reveal the cabinet aesthetic that matches
-        your personality
+        Find out if you&apos;re classic elegance, modern chic, or somewhere
+        beautifully in between.
       </p>
 
       <div className="flex items-center justify-center gap-2 text-neutral-500 mb-10">
         <Clock className="w-4 h-4" />
-        <span className="font-body text-small">Takes about 3 minutes</span>
+        <span className="font-body text-small">10 questions · About 3 minutes</span>
       </div>
 
       {/* Decorative Line */}

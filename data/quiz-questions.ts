@@ -1,8 +1,6 @@
 export interface QuizOption {
   id: string;
-  label: string;
-  description: string;
-  image?: string;
+  text: string;
 }
 
 export interface QuizQuestion {
@@ -14,182 +12,122 @@ export interface QuizQuestion {
 export const quizQuestions: QuizQuestion[] = [
   {
     id: "q1",
-    question: "It's movie night. Which film's aesthetic speaks to your soul?",
+    question: "When you imagine your dream home, what feeling do you want it to give you?",
     options: [
-      {
-        id: "a",
-        label: "The Great Gatsby",
-        description: "Glamorous, ornate, timeless elegance",
-        image: "/images/quiz/gatsby.jpg",
-      },
-      {
-        id: "b",
-        label: "A Beautiful Mind",
-        description: "Classic, intellectual, refined simplicity",
-        image: "/images/quiz/beautiful-mind.jpg",
-      },
-      {
-        id: "c",
-        label: "Ex Machina",
-        description: "Sleek, modern, cutting-edge minimalism",
-        image: "/images/quiz/ex-machina.jpg",
-      },
-      {
-        id: "d",
-        label: "Under the Tuscan Sun",
-        description: "Warm, rustic, inviting charm",
-        image: "/images/quiz/tuscan-sun.jpg",
-      },
-      {
-        id: "e",
-        label: "The Holiday",
-        description: "Cozy, transitional, effortlessly comfortable",
-        image: "/images/quiz/holiday.jpg",
-      },
+      { id: "A", text: "Timeless elegance, a space that feels like a legacy" },
+      { id: "B", text: "Warm and welcoming, where family naturally gathers" },
+      { id: "C", text: "Sleek and sophisticated, a space that feels effortlessly chic" },
+      { id: "D", text: "Romantic and nostalgic, filled with character and stories" },
+      { id: "E", text: "Charming and inviting, like a countryside escape" },
+      { id: "F", text: "Breezy and relaxed, like you're on vacation every day" },
     ],
   },
   {
     id: "q2",
-    question: "Your dream vacation home would be...",
+    question: "You've been pinning kitchen inspiration for months. What keeps catching your eye?",
     options: [
-      {
-        id: "a",
-        label: "Manhattan Penthouse",
-        description: "A penthouse with skyline views",
-        image: "/images/quiz/penthouse.jpg",
-      },
-      {
-        id: "b",
-        label: "French Farmhouse",
-        description: "A renovated farmhouse in the countryside",
-        image: "/images/quiz/farmhouse.jpg",
-      },
-      {
-        id: "c",
-        label: "Mediterranean Villa",
-        description: "A minimalist villa overlooking the sea",
-        image: "/images/quiz/villa.jpg",
-      },
-      {
-        id: "d",
-        label: "Pacific Northwest Cottage",
-        description: "A craftsman cottage among the trees",
-        image: "/images/quiz/cottage.jpg",
-      },
-      {
-        id: "e",
-        label: "Boston Brownstone",
-        description: "A restored historic brownstone",
-        image: "/images/quiz/brownstone.jpg",
-      },
+      { id: "A", text: "Grand, dramatic spaces with rich wood tones and ornate details" },
+      { id: "B", text: "Clean, comfortable kitchens that feel updated but not trendy" },
+      { id: "C", text: "Minimalist perfection where every detail is curated and intentional" },
+      { id: "D", text: "Weathered woods, exposed beams, and that reclaimed look" },
+      { id: "E", text: "Cozy painted cabinets with open shelving and vintage charm" },
+      { id: "F", text: "Bright whites and soft blues that make you feel like you're near water" },
     ],
   },
   {
     id: "q3",
-    question: "When you imagine hosting in your dream kitchen, you see...",
+    question: "If your cabinets could only be ONE color family for the next 20 years...",
     options: [
-      {
-        id: "a",
-        label: "Elegant Dinner Parties",
-        description: "Everything perfectly in place",
-        image: "/images/quiz/dinner-party.jpg",
-      },
-      {
-        id: "b",
-        label: "Casual Gatherings",
-        description: "Everyone congregating around the island",
-        image: "/images/quiz/casual-gathering.jpg",
-      },
-      {
-        id: "c",
-        label: "Sophisticated Cocktail Hours",
-        description: "Sleek, hidden storage everywhere",
-        image: "/images/quiz/cocktail-hour.jpg",
-      },
-      {
-        id: "d",
-        label: "Warm Family Meals",
-        description: "Everyone helping to cook together",
-        image: "/images/quiz/family-meals.jpg",
-      },
-      {
-        id: "e",
-        label: "Intimate Conversations",
-        description: "Coffee with close friends",
-        image: "/images/quiz/intimate-coffee.jpg",
-      },
+      { id: "A", text: "Rich, dark wood stains like mahogany, cherry, or walnut" },
+      { id: "B", text: "Soft neutrals like warm grays, taupes, or greiges" },
+      { id: "C", text: "Bold statements like deep charcoal, navy, or pure white with drama" },
+      { id: "D", text: "Natural wood with visible grain and imperfections" },
+      { id: "E", text: "Painted in soft colors like sage, cream, or powder blue" },
+      { id: "F", text: "Crisp white or light natural wood, airy and fresh" },
     ],
   },
   {
     id: "q4",
-    question: "When making design decisions, you typically...",
+    question: "Honest truth: Your kitchen will mostly be used for...",
     options: [
-      {
-        id: "a",
-        label: "Know Exactly What You Want",
-        description: "Classic never goes out of style",
-        image: "/images/quiz/classic-choice.jpg",
-      },
-      {
-        id: "b",
-        label: "Love Mixing Old and New",
-        description: "Character matters most",
-        image: "/images/quiz/mix-old-new.jpg",
-      },
-      {
-        id: "c",
-        label: "Prefer Clean Lines",
-        description: "Less is more",
-        image: "/images/quiz/clean-lines.jpg",
-      },
-      {
-        id: "d",
-        label: "Follow Your Heart",
-        description: "If it feels right, it's right",
-        image: "/images/quiz/follow-heart.jpg",
-      },
-      {
-        id: "e",
-        label: "Research Extensively",
-        description: "You want to understand every option",
-        image: "/images/quiz/research.jpg",
-      },
+      { id: "A", text: "Hosting elegant dinner parties" },
+      { id: "B", text: "Daily family activities with homework, snacks, and real life" },
+      { id: "C", text: "Looking absolutely flawless, like a magazine spread come to life" },
+      { id: "D", text: "Creating from scratch with baking, canning, and real cooking" },
+      { id: "E", text: "Cozy gatherings over coffee and homemade treats" },
+      { id: "F", text: "Easy, breezy entertaining" },
     ],
   },
   {
     id: "q5",
-    question: "Which cabinet detail catches your eye?",
+    question: "When it comes to cabinet details and hardware...",
     options: [
-      {
-        id: "a",
-        label: "Ornate Moldings",
-        description: "Decorative hardware and intricate details",
-        image: "/images/quiz/ornate-moldings.jpg",
-      },
-      {
-        id: "b",
-        label: "Shaker-Style Doors",
-        description: "Subtle sophistication",
-        image: "/images/quiz/shaker-style.jpg",
-      },
-      {
-        id: "c",
-        label: "Flat-Panel Design",
-        description: "Handleless, seamless integration",
-        image: "/images/quiz/flat-panel.jpg",
-      },
-      {
-        id: "d",
-        label: "Natural Wood Grain",
-        description: "Visible character and warmth",
-        image: "/images/quiz/wood-grain.jpg",
-      },
-      {
-        id: "e",
-        label: "Beaded Inset",
-        description: "Traditional craftsmanship",
-        image: "/images/quiz/beaded-inset.jpg",
-      },
+      { id: "A", text: "More is more. I love ornate moldings, corbels, and decorative elements" },
+      { id: "B", text: "Simple but quality. Classic Shaker style with understated hardware" },
+      { id: "C", text: "Less is more. Integrated handles or push-to-open, nothing visible" },
+      { id: "D", text: "Unique character with wrought iron, vintage pulls, and rustic charm" },
+      { id: "E", text: "Charming touches like glass fronts, beadboard, and delicate knobs" },
+      { id: "F", text: "Light and simple with brushed nickel or natural rope accents" },
+    ],
+  },
+  {
+    id: "q6",
+    question: "Which era or aesthetic secretly inspires your design taste?",
+    options: [
+      { id: "A", text: "Old Hollywood glamour and Southern belle elegance" },
+      { id: "B", text: "Suburban family sitcom homes from the 90s and 2000s" },
+      { id: "C", text: "NYC luxury, high fashion, and editorial perfection" },
+      { id: "D", text: "Vintage love stories and restored historic homes" },
+      { id: "E", text: "Wine country estates and European countryside charm" },
+      { id: "F", text: "Tropical escapes and resort-style luxury" },
+    ],
+  },
+  {
+    id: "q7",
+    question: "When you run your hand across your dream cabinets, what do you want to feel?",
+    options: [
+      { id: "A", text: "Smooth, polished wood with a rich, luxurious finish" },
+      { id: "B", text: "Soft matte surfaces that are velvety to the touch" },
+      { id: "C", text: "Ultra-smooth, flawless, almost glass-like perfection" },
+      { id: "D", text: "Natural grain with texture you can feel, authentic and real" },
+      { id: "E", text: "Painted surfaces with a soft, slightly hand-crafted feel" },
+      { id: "F", text: "Smooth with a subtle weathered feel, like driftwood" },
+    ],
+  },
+  {
+    id: "q8",
+    question: "Your ideal dinner party vibe is...",
+    options: [
+      { id: "A", text: "Formal dining with place cards and multiple courses" },
+      { id: "B", text: "Casual but nice with real plates, but everyone helps themselves" },
+      { id: "C", text: "Sophisticated cocktail party with couture-level presentation" },
+      { id: "D", text: "Farm-to-table, family-style platters and mismatched chairs" },
+      { id: "E", text: "Cozy brunch with homemade everything and good conversation" },
+      { id: "F", text: "Casual and carefree where paper napkins are totally acceptable" },
+    ],
+  },
+  {
+    id: "q9",
+    question: "Your ideal morning coffee moment happens in a kitchen that feels...",
+    options: [
+      { id: "A", text: "Like you're the lady of a grand estate, elegant and refined" },
+      { id: "B", text: "Comfortable and familiar, your favorite cozy spot" },
+      { id: "C", text: "Sleek and energizing, like the chicest spot in town" },
+      { id: "D", text: "Peaceful and grounding, connected to simpler times" },
+      { id: "E", text: "Charming and serene, like a countryside bed and breakfast" },
+      { id: "F", text: "Light and airy, like you're sipping coffee on a resort terrace" },
+    ],
+  },
+  {
+    id: "q10",
+    question: "When guests walk into your home, you want them to think...",
+    options: [
+      { id: "A", text: "This belongs in a classic movie, absolutely breathtaking" },
+      { id: "B", text: "This is SO them, warm, real, and beautifully updated" },
+      { id: "C", text: "This is sophisticated and impossibly chic" },
+      { id: "D", text: "This feels like a love letter to the past, so romantic" },
+      { id: "E", text: "This is the ultimate countryside dream" },
+      { id: "F", text: "Every day would feel like a relaxing getaway in this space" },
     ],
   },
 ];
