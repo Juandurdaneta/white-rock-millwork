@@ -224,7 +224,7 @@ function buildResultsEmail(data: QuizSubmitPayload): string {
 async function sendResultsEmail(
   contactId: string,
   data: QuizSubmitPayload
-): Promise<void> {
+): Promise<{ success: boolean; error?: string }> {
   const profile = styleProfiles[data.resultStyle];
   const subject = `${data.firstName}, your cabinet style is "${profile?.movieTitle || data.resultStyle}"!`;
   const html = buildResultsEmail(data);
@@ -237,16 +237,21 @@ async function sendResultsEmail(
       contactId,
       locationId: GHL_LOCATION_ID,
       subject,
+      html,
       message: html,
-      emailFrom: GHL_EMAIL_FROM,
+      emailFrom: `White Rock Millwork <${GHL_EMAIL_FROM}>`,
     }),
   });
 
+  const responseBody = await response.text();
+
   if (!response.ok) {
-    const error = await response.text();
-    console.error(`Failed to send email: ${response.status} - ${error}`);
-    // Don't throw - email failure shouldn't block the quiz flow
+    console.error(`Failed to send email: ${response.status} - ${responseBody}`);
+    return { success: false, error: `Email API ${response.status}: ${responseBody}` };
   }
+
+  console.log("Email sent successfully:", responseBody);
+  return { success: true };
 }
 
 export async function POST(request: NextRequest) {
@@ -270,13 +275,16 @@ export async function POST(request: NextRequest) {
     }
 
     // 3. Send results email
+    let emailStatus: { success: boolean; error?: string } = { success: false, error: "Email not configured" };
     if (GHL_EMAIL_FROM) {
-      await sendResultsEmail(contactId, data);
+      emailStatus = await sendResultsEmail(contactId, data);
     }
 
     return NextResponse.json({
       success: true,
       message: "Quiz submitted successfully",
+      emailSent: emailStatus.success,
+      emailError: emailStatus.error,
     });
   } catch (error) {
     console.error("Quiz submission error:", error);
