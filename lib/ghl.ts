@@ -1,6 +1,4 @@
-import { LeadFormData, ContactFormData } from "./validations";
-
-const GHL_WEBHOOK_URL = process.env.NEXT_PUBLIC_GHL_WEBHOOK_URL;
+import { ContactFormData } from "./validations";
 
 export interface QuizSubmissionData {
   firstName: string;
@@ -27,44 +25,32 @@ export interface ContactSubmissionData extends ContactFormData {
 }
 
 export async function submitQuizToGHL(data: QuizSubmissionData) {
-  if (!GHL_WEBHOOK_URL) {
-    console.warn("GHL_WEBHOOK_URL not configured");
-    // Return success in development
-    return { success: true, message: "Form submitted (webhook not configured)" };
-  }
-
-  const payload = {
-    firstName: data.firstName,
-    email: data.email,
-    cabinetChecklistOptIn: data.cabinetChecklistOptIn,
-    quizAnswers: data.quizAnswers,
-    resultStyle: data.resultStyle,
-    movieResult: data.movieResult,
-    source: "cabinet-style-quiz-movie",
-    submittedAt: new Date().toISOString(),
-  };
-
   try {
-    const response = await fetch(GHL_WEBHOOK_URL, {
+    const response = await fetch("/api/quiz-submit", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(payload),
+      body: JSON.stringify(data),
     });
 
+    const result = await response.json();
+
     if (!response.ok) {
-      throw new Error("Failed to submit form");
+      console.error("Quiz submission failed:", result.message);
+      return { success: false, message: result.message || "Failed to submit quiz" };
     }
 
-    return { success: true, message: "Form submitted successfully" };
+    return { success: true, message: result.message };
   } catch (error) {
-    console.error("Error submitting to GHL:", error);
-    return { success: false, message: "Failed to submit form" };
+    console.error("Error submitting quiz:", error);
+    return { success: false, message: "Failed to submit quiz" };
   }
 }
 
 export async function submitContactToGHL(data: ContactSubmissionData) {
+  const GHL_WEBHOOK_URL = process.env.NEXT_PUBLIC_GHL_WEBHOOK_URL;
+
   if (!GHL_WEBHOOK_URL) {
     console.warn("GHL_WEBHOOK_URL not configured");
     return { success: true, message: "Form submitted (webhook not configured)" };
