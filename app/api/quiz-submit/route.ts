@@ -27,7 +27,13 @@ function ghlHeaders() {
   };
 }
 
-async function createContact(data: QuizSubmitPayload): Promise<string> {
+async function createOrUpdateContact(data: QuizSubmitPayload): Promise<string> {
+  const tags = [
+    "quiz-lead",
+    `style-${data.resultStyle}`,
+    ...(data.cabinetChecklistOptIn ? ["cabinet-checklist-optin"] : []),
+  ];
+
   const response = await fetch(`${GHL_API_BASE}/contacts/`, {
     method: "POST",
     headers: ghlHeaders(),
@@ -35,18 +41,26 @@ async function createContact(data: QuizSubmitPayload): Promise<string> {
       firstName: data.firstName,
       email: data.email,
       locationId: GHL_LOCATION_ID,
-      tags: [
-        "quiz-lead",
-        `style-${data.resultStyle}`,
-        ...(data.cabinetChecklistOptIn ? ["cabinet-checklist-optin"] : []),
-      ],
+      tags,
       source: "Cabinet Style Quiz",
     }),
   });
 
   if (!response.ok) {
-    const error = await response.text();
-    throw new Error(`Failed to create contact: ${response.status} - ${error}`);
+    const errorBody = await response.json().catch(() => null);
+
+    // Contact already exists — update them with quiz tags instead
+    if (response.status === 400 && errorBody?.meta?.contactId) {
+      const existingId = errorBody.meta.contactId;
+      await fetch(`${GHL_API_BASE}/contacts/${existingId}`, {
+        method: "PUT",
+        headers: ghlHeaders(),
+        body: JSON.stringify({ tags }),
+      });
+      return existingId;
+    }
+
+    throw new Error(`Failed to create contact: ${response.status} - ${JSON.stringify(errorBody)}`);
   }
 
   const result = await response.json();
@@ -266,8 +280,8 @@ export async function POST(request: NextRequest) {
 
     const data: QuizSubmitPayload = await request.json();
 
-    // 1. Create contact in GHL
-    const contactId = await createContact(data);
+    // 1. Create or update contact in GHL
+    const contactId = await createOrUpdateContact(data);
 
     // 2. Create opportunity in pipeline
     if (GHL_PIPELINE_ID && GHL_PIPELINE_STAGE_ID) {

@@ -44,31 +44,48 @@ function ghlHeaders() {
   };
 }
 
-async function createContact(data: ContactSubmitPayload): Promise<string> {
+async function createOrUpdateContact(data: ContactSubmitPayload): Promise<string> {
+  const tags = [
+    "contact-form",
+    data.contactType,
+    `project-${data.projectType}`,
+    `timeline-${data.timeline}`,
+    ...(data.howHeard ? [`source-${data.howHeard}`] : []),
+  ];
+
+  const contactPayload = {
+    firstName: data.firstName,
+    lastName: data.lastName,
+    email: data.email,
+    phone: data.phone,
+    postalCode: data.zipCode,
+    locationId: GHL_LOCATION_ID,
+    tags,
+    source: data.contactType === "homeowner" ? "Homeowner Contact Form" : "Professional Contact Form",
+  };
+
   const response = await fetch(`${GHL_API_BASE}/contacts/`, {
     method: "POST",
     headers: ghlHeaders(),
-    body: JSON.stringify({
-      firstName: data.firstName,
-      lastName: data.lastName,
-      email: data.email,
-      phone: data.phone,
-      postalCode: data.zipCode,
-      locationId: GHL_LOCATION_ID,
-      tags: [
-        "contact-form",
-        data.contactType,
-        `project-${data.projectType}`,
-        `timeline-${data.timeline}`,
-        ...(data.howHeard ? [`source-${data.howHeard}`] : []),
-      ],
-      source: data.contactType === "homeowner" ? "Homeowner Contact Form" : "Professional Contact Form",
-    }),
+    body: JSON.stringify(contactPayload),
   });
 
   if (!response.ok) {
-    const error = await response.text();
-    throw new Error(`Failed to create contact: ${response.status} - ${error}`);
+    const errorBody = await response.json().catch(() => null);
+
+    // Contact already exists — update them instead
+    if (response.status === 400 && errorBody?.meta?.contactId) {
+      const existingId = errorBody.meta.contactId;
+      const { locationId: _, ...updatePayload } = contactPayload;
+      await fetch(`${GHL_API_BASE}/contacts/${existingId}`, {
+        method: "PUT",
+        headers: ghlHeaders(),
+        body: JSON.stringify(updatePayload),
+      });
+      return existingId;
+    }
+
+    throw new Error(`Failed to create contact: ${response.status} - ${JSON.stringify(errorBody)}`);
   }
 
   const result = await response.json();
@@ -119,8 +136,8 @@ export async function POST(request: NextRequest) {
 
     const data: ContactSubmitPayload = await request.json();
 
-    // 1. Create contact in GHL
-    const contactId = await createContact(data);
+    // 1. Create or update contact in GHL
+    const contactId = await createOrUpdateContact(data);
 
     // 2. Create opportunity in pipeline
     if (GHL_PIPELINE_ID && GHL_PIPELINE_STAGE_ID) {
