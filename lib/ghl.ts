@@ -20,10 +20,6 @@ export interface QuizSubmissionData {
   movieResult: string;
 }
 
-export interface ContactSubmissionData extends ContactFormData {
-  formType: "homeowner" | "professional";
-}
-
 export async function submitQuizToGHL(data: QuizSubmissionData) {
   try {
     const response = await fetch("/api/quiz-submit", {
@@ -48,47 +44,28 @@ export async function submitQuizToGHL(data: QuizSubmissionData) {
   }
 }
 
-export async function submitContactToGHL(data: ContactSubmissionData) {
-  const GHL_WEBHOOK_URL = process.env.NEXT_PUBLIC_GHL_WEBHOOK_URL;
-
-  if (!GHL_WEBHOOK_URL) {
-    console.warn("GHL_WEBHOOK_URL not configured");
-    return { success: true, message: "Form submitted (webhook not configured)" };
-  }
-
-  const payload = {
-    ...data,
-    source: data.formType === "homeowner" ? "homeowner-contact" : "professional-contact",
-    submittedAt: new Date().toISOString(),
-  };
-
+export async function submitContactForm(
+  data: ContactFormData & { contactType: "homeowner" | "professional" }
+) {
   try {
-    const response = await fetch(GHL_WEBHOOK_URL, {
+    const response = await fetch("/api/contact-submit", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(payload),
+      body: JSON.stringify(data),
     });
 
+    const result = await response.json();
+
     if (!response.ok) {
-      throw new Error("Failed to submit form");
+      console.error("Contact submission failed:", result.message);
+      return { success: false, message: result.message || "Failed to submit contact" };
     }
 
-    return { success: true, message: "Form submitted successfully" };
+    return { success: true, message: result.message };
   } catch (error) {
-    console.error("Error submitting to GHL:", error);
-    return { success: false, message: "Failed to submit form" };
+    console.error("Error submitting contact:", error);
+    return { success: false, message: "Failed to submit contact" };
   }
-}
-
-// Wrapper function for contact form component
-export async function submitContactForm(
-  data: ContactFormData & { contactType: "homeowner" | "professional" }
-) {
-  const { contactType, ...formData } = data;
-  return submitContactToGHL({
-    ...formData,
-    formType: contactType,
-  });
 }
