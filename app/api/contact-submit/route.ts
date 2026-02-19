@@ -114,9 +114,15 @@ async function createOpportunity(
   });
 
   if (!response.ok) {
-    const error = await response.text();
+    const errorBody = await response.json().catch(() => null);
+
+    // Opportunity already exists for this contact — not an error
+    if (response.status === 400 && errorBody?.message?.includes("duplicate opportunity")) {
+      return "existing";
+    }
+
     throw new Error(
-      `Failed to create opportunity: ${response.status} - ${error}`
+      `Failed to create opportunity: ${response.status} - ${JSON.stringify(errorBody)}`
     );
   }
 
