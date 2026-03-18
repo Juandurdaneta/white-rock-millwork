@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { motion } from "framer-motion";
@@ -45,6 +46,7 @@ const howHeardOptions = [
 ];
 
 export default function ContactForm({ type = "homeowner" }: ContactFormProps) {
+  const router = useRouter();
   const [submitStatus, setSubmitStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState<string>("");
 
@@ -81,6 +83,7 @@ export default function ContactForm({ type = "homeowner" }: ContactFormProps) {
       if (result.success) {
         setSubmitStatus("success");
         reset();
+        router.push("/contact/thank-you");
       } else {
         throw new Error(result.message || "Failed to submit form");
       }
