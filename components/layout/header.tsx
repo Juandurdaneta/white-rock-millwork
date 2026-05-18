@@ -65,10 +65,10 @@ export default function Header() {
               <Image
                 src="/Images/logo.png"
                 alt="Whiterock Millwork"
-                width={180}
-                height={48}
+                width={192}
+                height={96}
                 className={cn(
-                  "h-10 sm:h-12 w-auto transition-all duration-300",
+                  "h-12 sm:h-14 w-auto transition-all duration-300",
                   isScrolled || isLightPage
                     ? ""
                     : "brightness-0 invert group-hover:brightness-100 group-hover:invert-0"
