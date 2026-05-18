@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { MapPin, Phone, Mail } from "lucide-react";
 
 const quickLinks = [
@@ -28,11 +29,13 @@ export default function Footer() {
           {/* Company Info */}
           <div className="lg:col-span-1">
             <Link href="/" className="inline-block mb-6">
-              <span className="font-display text-2xl font-semibold text-neutral-50 tracking-wide">
-                WHITEROCK
-                <br />
-                MILLWORK
-              </span>
+              <Image
+                src="/Images/logo-white.png"
+                alt="Whiterock Millwork"
+                width={240}
+                height={120}
+                className="h-20 w-auto"
+              />
             </Link>
             <p className="text-neutral-400 leading-relaxed mb-6">
               Custom cabinets designed for your style and your daily life.
